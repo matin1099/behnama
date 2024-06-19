@@ -5,7 +5,15 @@
 */test/
 /test/*
 */scratch 
+scratch.*
 /scratch/*
+*.code-workspace
+test.py
+.vscode/*
+*/.vscode
+*.jpg
+*.png
+
 # END
 
 ### JupyterNotebooks ###
