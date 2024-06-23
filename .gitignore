@@ -8,12 +8,15 @@
 scratch.*
 /scratch/*
 *.code-workspace
-test.py
+test*.py
 .vscode/*
 */.vscode
 *.jpg
 *.png
 NOTE FOR DOCKER.txt
+test.*
+test.json
+.jupyter*
 # END
 
 ### JupyterNotebooks ###
