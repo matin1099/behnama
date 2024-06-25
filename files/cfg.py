@@ -14,8 +14,9 @@ class Cfg:
             urls = self.data["scrap_url"]
             header = self.data["req_header"]
             halt = self.data["halt"]
+            prev_url = self.data["prev_image_url"]
             print("config read Successfuly")
-            return urls, header, halt
+            return urls, header, halt, prev_url
 
     def change_cfg(self) -> None:
         pass

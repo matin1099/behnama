@@ -6,11 +6,11 @@ import  datetime
 
 class scrap:
     def __init__(self, url:str, header:dict) -> None:
+        #Getting url and setting header for grub
         print("init run!")
         self.link = url
         print("link run!")
         self.header = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
-        #self.header = dict(header)
         self.grab (self.link, self.header)
         print("grab run!")
 
@@ -18,16 +18,18 @@ class scrap:
 
     def grab(self,url,headers):
         try:
-            print("1")
+            #start request
             req = requests.get(self.link, headers=self.header)
             if req.status_code == 200 :
-                print("2")
+                #try to find Price table (pt) url
                 print("Request respond Successfully.")
                 raw_html = bs4.BeautifulSoup(req.text,"lxml")
                 pt_url = raw_html.select("img")[1]["src"] 
                 try:
+                    #try to get url (DOUBLE TIME REQ SOMETIMES IT WONT WORK FOR FIST TIME!)
                     pt_bimg = requests.get(pt_url,headers=self.header)
                     pt_bimg = requests.get(pt_url,headers=self.header)
+                    # save image if PT binery getted
                     if pt_bimg.status_code == 200 :
                         print("image recived.")
                         self.save_img(pt_bimg.content)
