@@ -1,3 +1,5 @@
+#src:https://medium.com/@patelharsh7458/python-script-for-compare-2-images-and-detected-changes-annotate-with-rectangles-fadacb4100d9
+
 import cv2
 import os
 
