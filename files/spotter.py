@@ -4,8 +4,9 @@ import cv2
 import os
 
 import numpy as np
+from files.sound import notification_spot
 
-class spotter:
+class Spotter:
 
     def __init__(self,) -> None:
 
@@ -74,7 +75,7 @@ class spotter:
 
                 #####
                 cv2.imwrite("diffrent.png", given_image)
-
+                notification_spot()
                 print("NEW DIFF IMAGE READY")
                 #####
 
