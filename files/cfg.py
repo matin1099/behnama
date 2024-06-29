@@ -10,7 +10,7 @@ class Cfg:
             
             
 
-    def read_cfg(self) -> (urls, halt, prev_url,old_image):
+    def read_cfg(self) -> dict:
             urls = self.data["scrap_url"]
             halt = self.data["halt"]
             prev_url = self.data["prev_url"]
