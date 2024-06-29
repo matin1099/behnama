@@ -19,7 +19,7 @@ class Cfg:
             return urls, halt, prev_url,old_image
 
     def change_image_info(self,section:str, website:str, new_info:str) -> None:
-        self.data[section][website] = new_info
+        self.data[section][website] = new_info if website != "" else self.data[section] = new_info
         with open("Config.json","w") as jf:
              updating = json.dump(self.data,jf)
              jf.close()
