@@ -10,17 +10,21 @@ class Cfg:
             
             
 
-    def read_cfg(self) -> None:
+    def read_cfg(self) -> (urls, halt, prev_url,old_image):
             urls = self.data["scrap_url"]
-            header = self.data["req_header"]
             halt = self.data["halt"]
             prev_url = self.data["prev_url"]
             old_image = self.data["prev_image_name"]
             print("config read Successfuly")
-            return urls, header, halt, prev_url,old_image
+            return urls, halt, prev_url,old_image
 
-    def change_cfg(self) -> None:
-        pass
+    def change_image_info(self,section:str, website:str, new_info:str) -> None:
+        self.data[section][website] = new_info
+        with open("Config.json","w") as jf:
+             updating = json.dump(self.data,jf)
+             jf.close()
+        print("json Updated")
+        
 
     def __str__(self) -> str:
          return(
