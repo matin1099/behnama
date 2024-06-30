@@ -18,8 +18,19 @@ class Cfg:
             print("config read Successfuly")
             return urls, halt, prev_url,old_image
 
-    def change_image_info(self,section:str, website:str, new_info:str) -> None:
-        self.data[section][website] = new_info if website != "" else self.data[section] = new_info
+    def change_info(self,section:str, website:str, new_info:str) -> None:
+        #Changing Jsons entity!
+        """Changing Json entitys
+
+        Args:
+            section (str): _'MUST FILL' Section to change i.e. scrap_url
+            website (str): 'OPTINAL' subsection if needed. Note: halt Dosen't have subsection
+            new_info (str): 'MUST FILL' new information to replace
+        """
+        if website != "" :
+            self.data[section][website] = new_info
+        else:
+             self.data[section] = new_info
         with open("Config.json","w") as jf:
              updating = json.dump(self.data,jf)
              jf.close()
