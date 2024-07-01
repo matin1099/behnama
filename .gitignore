@@ -6,10 +6,12 @@
 /test/*
 */scratch 
 scratch.*
+scratch
 /scratch/*
 *.code-workspace
 test*.py
 .vscode/*
+.vscode
 */.vscode
 *.jpg
 *.png
@@ -17,6 +19,8 @@ NOTE FOR DOCKER.txt
 test.*
 test.json
 .jupyter*
+codes
+archive
 # END
 
 ### JupyterNotebooks ###

@@ -11,12 +11,17 @@ class Cfg:
             
 
     def read_cfg(self) -> dict:
-            urls = self.data["scrap_url"]
-            halt = self.data["halt"]
-            prev_url = self.data["prev_url"]
-            old_image = self.data["prev_image_name"]
-            print("config read Successfuly")
-            return urls, halt, prev_url,old_image
+        """returning data from json
+
+        Returns:
+            dict: URLs, Halt, Prev_url, Prev_image
+        """
+        urls = self.data["scrap_url"]
+        halt = self.data["halt"]
+        prev_url = self.data["prev_url"]
+        old_image = self.data["prev_image_name"]
+        print("config read Successfuly")
+        return urls, halt, prev_url,old_image
 
     def change_info(self,section:str, website:str, new_info:str) -> None:
         #Changing Jsons entity!
