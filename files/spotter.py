@@ -4,6 +4,8 @@ import cv2
 import os
 
 import numpy as np
+from  loguru import logger
+
 from files.sound import notification_spot
 
 class Spotter:
@@ -21,7 +23,7 @@ class Spotter:
 
         # Check if both image files exist
         if not os.path.exists(reference_image_path) or not os.path.exists(given_image_path):
-                print("One or both image files do not exist.")
+                logger.critical("One or both image NOT FOUND")
         else:
             # Load the reference and given images
             reference_image = cv2.imread(reference_image_path)
@@ -76,6 +78,6 @@ class Spotter:
                 #####
                 cv2.imwrite("diffrent.png", given_image)
                 notification_spot()
-                print("NEW DIFF IMAGE READY")
+                logger.info("NEW DIFF IMAGE READY")
                 #####
 
