@@ -1,12 +1,9 @@
  
 beautifulsoup4 
- loguru==0.7.2
-
-imutils==0.5.4 
+loguru
+imutils
 lxml 
- 
-numpy==2.0.0
-opencv-python==4.10.0.84
-pydub==0.25.1
-
+ numpy
+opencv-python
+pydub
 requests 
