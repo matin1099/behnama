@@ -1,8 +1,9 @@
+ 
 beautifulsoup4 
 loguru
 imutils
 lxml 
-numpy
+ numpy
 opencv-python
 pydub
 requests 
